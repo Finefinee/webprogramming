@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+    <script>
+      // 문제5) (break, continue까지 배운 내용 활용)사용자로부터 정수를 무한히 입력 받아, 소수만 골라내는 프로그램을 작성하세요.             <조건>
+      //   1) 사용자가 음수나 1을 입력하면 무시하고 다음 입력을 받음
+      //   2) 입력 받은 숫자가 소수가 아니라면 역시 무시하고 다음 입력을 받음
+      //   3) 입력 받은 숫자가 소수라면 수집 목록에 추가함
+      //   4) 정확히 5개의 소수가 수집되면, 수집된 5개의 소수 목록과 그 합계를 출력한 뒤 프로그램을 종료
+      //   입력 예시) 2 3 5 7 10 11
+      //   출력 예시) 소수목록: 2, 3, 5, 7, 11
+      //   합계: 28
+      
+      let primeArray = [];
+      let hap = 0;
+      const MAX_ARRAY_LENGTH = 5;
+
+      while (true) {
+		      
+        let inputNumber = Number(prompt("숫자 입력"));
+        
+        if (inputNumber >= 2) {
+          
+          if (isPrime(inputNumber)) {
+            hap += inputNumber;
+            primeArray.push(inputNumber);
+            if (primeArray.length === MAX_ARRAY_LENGTH) {
+              for (const primeArrayElement of primeArray) {
+                console.log(primeArrayElement);
+              }
+              console.log(hap);
+              break;
+            }
+          }
+        }
+      }
+      
+      function isPrime(number) {
+          for (let i = 2; i <= number / 2; i++) {
+              if (number % i === 0) {
+                  return false;
+              }
+          }
+          return true;
+      }
+    </script>
+	</body>
+</html>

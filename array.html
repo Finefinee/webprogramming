@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+    <script>
+        const array = ["string", true, function () {console.log("hello")}, {이름: "소마고", 나이:"18"}, [273, 103]];
+        for (const arrayElement of array) {
+          if (arrayElement instanceof Array) {
+            console.log("array");
+          } else {
+            console.log(typeof (arrayElement));
+          }
+        }
+    </script>
+	</body>
+</html>
